@@ -1,29 +1,34 @@
 import React from "react";
 import { ITOGGLE } from "../toggle";
 import { FcHome } from "react-icons/fc";
+import { Link, NavLink } from "react-router-dom";
 
 interface ILinks {
   img: string;
   header: string;
-  navLink?: string;
+  navLink: string;
 }
 const BottomContent: React.FC<ITOGGLE> = ({ ToggleTorF }) => {
   const BLinks: ILinks[] = [
     {
       img: "https://www.svgrepo.com/show/286791/home.svg",
       header: "Home",
+      navLink: "/",
     },
     {
       img: "https://www.svgrepo.com/show/49028/paper-boat.svg",
       header: "Projects",
+      navLink: "/projects",
     },
     {
       img: "https://www.svgrepo.com/show/223946/skills.svg",
       header: "Skills",
+      navLink: "/skills",
     },
     {
       img: "https://www.svgrepo.com/show/243093/slides.svg",
       header: "Docs",
+      navLink: "/docs",
     },
   ];
   return (
@@ -34,13 +39,12 @@ const BottomContent: React.FC<ITOGGLE> = ({ ToggleTorF }) => {
     >
       {BLinks.map((e) => {
         return (
-          <div
-            className="w-[173px] h-[21px] rounded-[20px] border border-transparent bg-[rgba(187,222,251,0.29)] bg-blend-normal shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0px_6px_8px_rgba(0,0,0,0.3)] hover:bg-[rgba(187,222,251,0.4)]"
-            key={e.header}
-          >
-            <img src={e.img} alt={e.header} className="h-4 mt-[1px]" />
-            <h2>{e.header}</h2>
-          </div>
+          <Link to={e.navLink} key={e.navLink}>
+            <div className="w-[173px] h-[21px] pl-2 flex gap-2 rounded-[20px] border border-transparent bg-[rgba(187,222,251,0.29)] bg-blend-normal shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0px_6px_8px_rgba(0,0,0,0.3)] hover:bg-[rgba(187,222,251,0.4)]">
+              <img src={e.img} alt={e.header} className="h-4 mt-[1px]" />
+              <h2>{e.header}</h2>
+            </div>
+          </Link>
         );
       })}
 

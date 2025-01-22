@@ -1,11 +1,33 @@
-import React, { useEffect } from "react";
-import MiniBar from "./MiniBar/MiniBar";
-import FloatingHead from "./FloatingHead";
+import React, { lazy, Suspense, useEffect, useState } from "react";
+
+const MiniBar = lazy(() => import("./MiniBar/MiniBar"));
+const FloatingHead = lazy(() => import("./FloatingHead"));
 import Toggle from "./toggle";
-const NavBar = () => {
+import DraggableComponent from "./DragMe";
+import { AiOutlineReload } from "react-icons/ai";
+const NavBar: React.FC = () => {
   const { setTrue, setFalse, toggle, setToggling } = Toggle();
-  // ? for ease to use floating nav bar cause every time moving cursor in order open might get bored
-  // ? so fix that problem we can open now with key combination
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  // TODO : this code is written for mobile toggle compatiability with swipping so fix problem
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    setTouchEnd(e.changedTouches[0].clientX);
+    if (touchStart !== null) {
+      const swipeDistance = e.changedTouches[0].clientX - touchStart;
+      if (swipeDistance > 1) {
+        setTrue();
+        // Swipe right
+      } else if (swipeDistance < -1) {
+        setFalse(); // Swipe left
+      }
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.ctrlKey && event.key === "k") {
@@ -17,16 +39,24 @@ const NavBar = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [setToggling]);
 
   return (
-    <main className="flex roboto-font  w-fit space-x-3 items-center *:cursor-pointer">
-      {toggle ? (
-        <MiniBar ToggleTorF={setFalse} />
-      ) : (
-        <FloatingHead ToggleTorF={setTrue} />
-      )}
-    </main>
+    <Suspense fallback={<AiOutlineReload className="fixed animate-spin" />}>
+      <DraggableComponent>
+        <main
+          className="flex roboto-font w-fit space-x-3 items-center *:cursor-pointer"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          {toggle ? (
+            <MiniBar ToggleTorF={setFalse} />
+          ) : (
+            <FloatingHead ToggleTorF={setTrue} />
+          )}
+        </main>
+      </DraggableComponent>
+    </Suspense>
   );
 };
 

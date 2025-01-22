@@ -43,10 +43,12 @@ const DraggableComponent: React.FC<IPROP> = ({ children }) => {
 
   return (
     <div
-      ref={dragRef} // Assign the ref to the div element for manipulation
-      className="rounded-lg flex items-center justify-center cursor-pointer w-fit"
+      ref={dragRef}
+      // Assign the ref to the div element for manipulation
+      className="rounded-lg flex items-center justify-center cursor-pointer w-fit fixed "
     >
-      {children} {/* Render any children inside the draggable element */}
+      {/* Render any children inside the draggable element */}
+      {children}
     </div>
   );
 };

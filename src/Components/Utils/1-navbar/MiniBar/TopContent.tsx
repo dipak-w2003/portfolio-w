@@ -1,5 +1,6 @@
 import React from "react";
 import { GithubSVG, GmailSVG, LinkedInSVG, TwitterXSVG } from "./SVG";
+import { Link } from "react-router-dom";
 
 const TopContent: React.FC = () => {
   return (
@@ -28,18 +29,41 @@ function HeadNavLinks() {
       className="links flex justify-center gap-3 *:rounded-full items-center *:h-[34px] *:w-[34px] *:shadow-custom-inset *:flex *:justify-center *:items-center
     "
     >
-      <div className={`bg-[#92abb0] ${hoverStyle}`}>
+      <a
+        href="https://github.com/dipak-w2003"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`bg-[#92abb0] ${hoverStyle}`}
+      >
         <GithubSVG />
-      </div>
-      <div className={`bg-[#cc5f58] ${hoverStyle}`}>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/dipak-tamang-437168314"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`bg-[#cc5f58] ${hoverStyle}`}
+      >
         <LinkedInSVG />
-      </div>
-      <div className={`bg-[#51395b] ${hoverStyle}`}>
+      </a>
+
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=dipaktamang2003w@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`bg-[#51395b] ${hoverStyle}`}
+      >
         <GmailSVG />
-      </div>
-      <div className={`bg-[#8c4263] ${hoverStyle}`}>
+      </a>
+
+      <a
+        href="https://x.com/dipak_thieng"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`bg-[#8c4263] ${hoverStyle}`}
+      >
         <TwitterXSVG />
-      </div>
+      </a>
     </section>
   );
 }
