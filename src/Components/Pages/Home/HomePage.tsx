@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../../Utils/1-navbar/NavBar";
 
 const HomePage = () => {
   const [w, setW] = React.useState<number>(window.innerWidth);

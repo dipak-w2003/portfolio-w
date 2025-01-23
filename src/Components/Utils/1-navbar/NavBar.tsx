@@ -23,7 +23,8 @@ const NavBar: React.FC = () => {
         setTrue();
         // Swipe right
       } else if (swipeDistance < -1) {
-        setFalse(); // Swipe left
+        setFalse();
+        // Swipe left
       }
     }
   };
@@ -42,7 +43,11 @@ const NavBar: React.FC = () => {
   }, [setToggling]);
 
   return (
-    <Suspense fallback={<AiOutlineReload className="fixed animate-spin" />}>
+    <Suspense
+      fallback={
+        <AiOutlineReload className="fixed text-gray-600 animate-spin" />
+      }
+    >
       <DraggableComponent>
         <main
           className="flex roboto-font w-fit space-x-3 items-center *:cursor-pointer"

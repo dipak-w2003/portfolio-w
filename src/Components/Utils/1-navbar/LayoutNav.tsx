@@ -1,4 +1,3 @@
-import React from "react";
 import { Outlet } from "react-router-dom"; // To render the active page
 import NavBar from "./NavBar";
 

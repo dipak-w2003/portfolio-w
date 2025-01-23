@@ -1,6 +1,5 @@
 import React from "react";
 import { GithubSVG, GmailSVG, LinkedInSVG, TwitterXSVG } from "./SVG";
-import { Link } from "react-router-dom";
 
 const TopContent: React.FC = () => {
   return (

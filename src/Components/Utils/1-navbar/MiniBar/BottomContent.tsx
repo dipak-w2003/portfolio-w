@@ -1,7 +1,6 @@
 import React from "react";
 import { ITOGGLE } from "../toggle";
-import { FcHome } from "react-icons/fc";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface ILinks {
   img: string;
