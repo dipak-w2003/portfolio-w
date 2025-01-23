@@ -40,7 +40,7 @@ const NavBar: React.FC = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [setToggling]);
+  }, [setToggling, touchEnd]);
 
   return (
     <Suspense

@@ -2,7 +2,7 @@ import React from "react";
 type ICLASS = {
   className?: string;
 };
-export const GithubSVG: React.FC<ICLASS> = ({ className }) => {
+export const GithubSVG: React.FC<ICLASS> = () => {
   return (
     <svg
       className="h-7"

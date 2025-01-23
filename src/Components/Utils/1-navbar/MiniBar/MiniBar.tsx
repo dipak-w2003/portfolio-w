@@ -8,9 +8,8 @@ const MiniBar: React.FC<ITOGGLE> = ({ ToggleTorF }) => {
   return (
     <nav
       className=" w-[200px] h-[450px] rounded-[15px] bg-mini-bar relative   p-2
-      motion-preset-pop motion-duration-500
-      "
-      // onMouseLeave={ToggleTorF}
+      motion-preset-pop motion-duration-500"
+      onMouseLeave={ToggleTorF}
     >
       {/* ? contents */}
       <CurvedSvg />
