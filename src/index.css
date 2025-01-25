@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Norican&display=swap");
 .full-screen {
   height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
@@ -22,4 +23,20 @@
 .roboto-font {
   font-family: "Roboto", serif;
   font-style: normal;
+}
+.norican-font {
+  font-family: "Norican", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fira-font {
+  font-family: "Fira Code", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.custom-blend {
+  background-blend-mode: normal;
 }

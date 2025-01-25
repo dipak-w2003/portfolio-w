@@ -1,0 +1,47 @@
+/* Why External CSS */
+/* ? tailwind complicates some after or over boiler plate styling :  */
+/* ? simple fluid : after nav bar */
+#links {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#links li,
+button {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: medium;
+  width: 120px;
+  height: 38px;
+  border: solid 1.3px;
+  border-radius: 13px;
+  position: relative;
+  overflow: hidden;
+  z-index: 999;
+  border-radius: 25px;
+}
+#links li:hover {
+  color: white;
+  transition: color linear 0.8s;
+}
+
+#links li::after {
+  color: white;
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  bottom: -110%;
+  transition: all linear 0.25s;
+  border-radius: 80px;
+}
+#links li:hover::after {
+  bottom: 0;
+  z-index: -1;
+  color: white;
+}
