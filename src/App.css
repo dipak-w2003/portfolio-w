@@ -1,12 +1,12 @@
 /* Why External CSS */
 /* ? tailwind complicates some after or over boiler plate styling :  */
 /* ? simple fluid : after nav bar */
-#links {
+/* #links {
   justify-content: space-around;
   display: flex;
   align-items: center;
   gap: 16px;
-}
+} */
 
 #links li,
 button {
