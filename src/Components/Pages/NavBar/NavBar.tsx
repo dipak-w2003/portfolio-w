@@ -4,16 +4,15 @@ import gsap from "gsap";
 import { IoMenuSharp } from "react-icons/io5";
 const NavBar = () => {
   useGSAP(() => {
-    const ids = ["logo-name", "explore", "github", "twitter", "login"];
+    const ids = ["logo-name", "explore", "github", "twitter", "login","ham-icon"];
     const tl = gsap.timeline();
-
-    // ids.forEach((ids) => {
-    //   tl.from(`#${ids}`, {
-    //     y: -100,
-    //     x: -5,
-    //     duration: 0.5,
-    //   });
-    // });
+    ids.forEach((ids) => {
+      tl.from(`#${ids}`, {
+        y: -100,
+        x: -5,
+        duration: 0.5,
+      });
+    });
   });
   return (
     <nav
@@ -62,8 +61,7 @@ const NavBar = () => {
           Login
         </button>
       </ul>
-
-      <IoMenuSharp className="text-4xl md:hidden block lg:hidden xl:hidden  " />
+      <IoMenuSharp className="text-4xl md:hidden block lg:hidden xl:hidden  " id="ham-icon" />
     </nav>
   );
 };
