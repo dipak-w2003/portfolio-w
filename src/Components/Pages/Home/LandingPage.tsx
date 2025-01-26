@@ -1,8 +1,9 @@
 import landing_pp from "./imgs/landing_pp.png";
+// import gradient_bg from "./imgs/gradient_bg_1.jpg";
 const LandingPage = () => {
   return (
     <div
-      className={`after-nav-h  bg-[#EDEDED] flex justify-center flex-col items-center 
+      className={`after-nav-h  flex justify-center flex-col items-center 
    xxs:justify-center xxs:gap-10 
    xs:gap-14
    sm:justify-around sm:items-center
@@ -30,6 +31,12 @@ const LandingPage = () => {
       >
         Building Code, Solving Problems & sharing innovation
       </h3>
+      {/* 
+      <img
+        src={gradient_bg}
+        alt="bg"
+        className="absolute -z-10 object-cover top-0 h-full w-full"
+      /> */}
     </div>
   );
 };

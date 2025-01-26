@@ -5,7 +5,7 @@ interface IProps {
 }
 const LayOutWithNavBar = (props: IProps) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
       <NavBar />
       <div>{props.children}</div>
     </div>

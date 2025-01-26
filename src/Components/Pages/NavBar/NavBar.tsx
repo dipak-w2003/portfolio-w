@@ -5,41 +5,27 @@ import React from "react";
 import { IoMenuSharp } from "react-icons/io5";
 import Explores from "./Explores";
 import MiniExplores from "./MiniExplores";
+import { useLocation } from "react-router-dom";
 const NavBar = () => {
   const [toggle, setToggle] = React.useState<boolean>(false);
+  const location = useLocation();
 
-  useGSAP(() => {
-    const ids = ["explore", "github", "twitter", "login"];
-    const tl = gsap.timeline();
-
-    gsap.from(`#logo-name`, {
-      // x: -100,
-      // duration: 0.66,
-    });
-    ids.forEach((ids) => {
-      tl.from(`#${ids}`, {
-        y: -100,
-        duration: 0.66,
-      });
-    });
-    gsap.from("#ham-icon", {
-      y: -100,
-      delay: 0.66,
-      duration: 0.66,
-    });
-  });
   const onFocus_onClick = () => setTimeout(() => setToggle(!toggle), 0);
   const onFocusOut_onMove = () => setTimeout(() => setToggle(false), 700);
+  location.pathname == "/" && RenderGSAP();
   React.useEffect(() => {
+    sessionStorage.setItem("routeChaged", JSON.stringify(false));
     return () => {
       console.log("updated drop-down, ", toggle);
+      console.log("location changed, ", location);
     };
-  }, [toggle]);
+  }, [location, toggle]);
   return (
     <nav
       className={`w-full h-[65px] bg-[rgba(255,255,255,0.86)] bg-blend-normal 
       shadow-[0px_5px_4px_rgba(0,0,0,0.25)] flex items-center px-6 justify-between fira-font
       sticky top-0
+      z-40
 
     `}
     >
@@ -82,13 +68,31 @@ const NavBar = () => {
             <Explores />
           </div>
         )}
+
+        {/* ? connect links */}
         <li id="github">
-          <h2>Github</h2>
-          <img src={github} className="h-[22px] object-cover" alt="github" />
+          <a
+            href="https://github.com/dipak-w2003"
+            className="flex justify-between gap-4"
+            target="_blank"
+          >
+            <h2>Github</h2>
+            <img src={github} className="h-[22px] object-cover" alt="github" />
+          </a>
         </li>
         <li id="twitter">
-          <h2>Twitter</h2>
-          <img src={twitter} className="h-[23px] object-cover" alt="twitter" />
+          <a
+            href="https://github.com/dipak-w2003"
+            className="flex justify-between gap-2"
+            target="_blank"
+          >
+            <h2>Twitter</h2>
+            <img
+              src={twitter}
+              className="h-[23px] object-cover"
+              alt="twitter"
+            />
+          </a>
         </li>
         <button
           id="login"
@@ -122,3 +126,25 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+function RenderGSAP() {
+  useGSAP(() => {
+    const ids = ["explore", "github", "twitter", "login"];
+    const tl = gsap.timeline();
+    gsap.from(`#logo-name`, {
+      // x: -100,
+      // duration: 0.66,
+    });
+    ids.forEach((ids) => {
+      tl.from(`#${ids}`, {
+        y: -100,
+        duration: 0.66,
+      });
+    });
+    // gsap.from("#ham-icon", {
+    //   y: -100,
+    //   delay: 0.66,
+    //   duration: 0.66,
+    // });
+  });
+}

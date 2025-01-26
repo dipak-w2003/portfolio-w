@@ -16,10 +16,15 @@ const HomePage = () => {
   }, [w]);
   return (
     <LayOutWithNavBar>
-      {/* <div className="text-cyan-400 h-full xs:bg-amber-800  sm:bg-red-500 md:bg-blue-500 lg:bg-green-500 xl:bg-yellow-500 2xl:bg-purple-500  flex justify-center items-center  font-bold text-xl">
-        // {/* {window.innerWidth} PX */}
-      {/* </div> */}
       <LandingPage />
+      {/* <img
+        src={top_left_svg}
+        className="fixed  h-[30vw] w-h-[30vw] object-fill top-0 "
+      />
+      <img
+        src={bottom_right_svg}
+        className="fixed  h-[30vw] w-h-[30vw] object-fill bottom-0 right-0  "
+      /> */}
     </LayOutWithNavBar>
   );
 };
