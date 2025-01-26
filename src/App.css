@@ -24,7 +24,8 @@ button {
   z-index: 999;
   border-radius: 25px;
 }
-#links li:hover {
+
+#links li #links li:hover {
   color: white;
   transition: color linear 0.8s;
 }
@@ -43,5 +44,14 @@ button {
 #links li:hover::after {
   bottom: 0;
   z-index: -1;
+}
+
+#links li #links li:hover {
   color: white;
+  transition: color linear 0.8s;
+}
+
+#links li:hover::after {
+  bottom: 0;
+  z-index: -1;
 }

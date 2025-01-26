@@ -3,13 +3,13 @@ import NavBar from "./NavBar";
 interface IProps {
   children?: ReactNode;
 }
-const NavLayout = (props: IProps) => {
+const LayOutWithNavBar = (props: IProps) => {
   return (
-    <div>
+    <div className="flex flex-col">
       <NavBar />
       <div>{props.children}</div>
     </div>
   );
 };
 
-export default NavLayout;
+export default LayOutWithNavBar;

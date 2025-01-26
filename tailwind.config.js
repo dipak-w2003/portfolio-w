@@ -5,6 +5,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        xxs: "479px",
         xs: "375px",
       },
       boxShadow: {
