@@ -5,8 +5,25 @@ import About from "./Components/Pages/About/About";
 import Work from "./Components/Pages/Work/Work";
 import BlogsPage from "./Components/Pages/Blogs/Blogs";
 import Dashboard from "./Components/Pages/Dashboard/Dashboard";
+import WelcomePage from "./Components/Pages/Welcome/WelcomePage";
+import { useEffect, useState } from "react";
 
 const App = () => {
+  const [isWelcomed, setWelcomed] = useState<boolean>(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setWelcomed(true);
+      // Mark as welcomed after 5 seconds
+    }, 3500);
+
+    // Cleanup function to clear the timeout if the component is unmounted
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
+  // Empty dependency array ensures this effect runs only once
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -29,14 +46,12 @@ const App = () => {
       element: <Dashboard />,
     },
   ]);
-  return <RouterProvider router={router} />;
+
+  return isWelcomed ? (
+    <RouterProvider router={router} />
+  ) : (
+    <WelcomePage isWelcomed={isWelcomed} />
+  );
 };
 
 export default App;
-// ? tailwind responsive observer
-// xxs:bg-red-400
-// xs:bg-amber-300
-// sm:bg-pink-400
-// md:bg-cyan-200
-// lg:bg-blue-700
-// xl:bg-red-800

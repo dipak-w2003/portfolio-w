@@ -1,8 +1,8 @@
-import { dropdown, github, twitter } from "./svgs";
+import { dipak, dropdown, github, twitter } from "./svgs";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React from "react";
 import { IoMenuSharp } from "react-icons/io5";
+import React from "react";
 import Explores from "./Explores";
 import MiniExplores from "./MiniExplores";
 import { useLocation } from "react-router-dom";
@@ -22,19 +22,26 @@ const NavBar = () => {
   }, [location, toggle]);
   return (
     <nav
-      className={`w-full h-[65px] bg-[rgba(255,255,255,0.86)] bg-blend-normal 
+      className={`w-full h-[65px] bg-[rgba(255,255,255,0.86)] bg-blend-normal
       shadow-[0px_5px_4px_rgba(0,0,0,0.25)] flex items-center px-6 justify-between fira-font
       sticky top-0
       z-40
 
     `}
     >
-      <h2
+      {/* <h2
         id="logo-name"
         className="norican-font  text-[37px] font-normal text-right tracking-[3.6px] transition-all md:text-3xl lg:text-4xl"
       >
         Dipak Tamang
-      </h2>
+      </h2> */}
+
+      <img
+        id="logo-name"
+        src={dipak}
+        className="transition-all"
+        alt="logo_dipak"
+      />
 
       <ul
         id="links"
@@ -60,8 +67,8 @@ const NavBar = () => {
             onClick={onFocus_onClick}
             onMouseEnter={() => setToggle(true)}
             onMouseLeave={onFocusOut_onMove}
-            className="  absolute -left-7  top-[125%] w-[170px] h-[220px] border border-transparent 
-            bg-[#f7f7f7] shadow-[4px_8px_4px_rgba(0,0,0,0.25)] 
+            className="  absolute -left-7  top-[125%] w-[170px] h-[220px] border border-transparent
+            bg-[#f7f7f7] shadow-[4px_8px_4px_rgba(0,0,0,0.25)]
             motion-preset-confetti motion-duration-1000
             "
           >
@@ -112,8 +119,8 @@ const NavBar = () => {
       {/* Drop-down-options */}
       {toggle && (
         <div
-          className="  absolute right-0  top-0 w-full full-screen border border-transparent 
-            bg-[#f7f7f7] shadow-[4px_8px_4px_rgba(0,0,0,0.25)] 
+          className="  absolute right-0  top-0 w-full full-screen border border-transparent
+            bg-[#f7f7f7] shadow-[4px_8px_4px_rgba(0,0,0,0.25)]
             md:hidden flex flex-col justify-around items-center lg:hidden xl:hidden
             "
         >

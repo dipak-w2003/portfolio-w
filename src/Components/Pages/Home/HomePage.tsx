@@ -15,17 +15,11 @@ const HomePage = () => {
     };
   }, [w]);
   return (
-    <LayOutWithNavBar>
-      <LandingPage />
-      {/* <img
-        src={top_left_svg}
-        className="fixed  h-[30vw] w-h-[30vw] object-fill top-0 "
-      />
-      <img
-        src={bottom_right_svg}
-        className="fixed  h-[30vw] w-h-[30vw] object-fill bottom-0 right-0  "
-      /> */}
-    </LayOutWithNavBar>
+    <>
+      <LayOutWithNavBar>
+        <LandingPage />
+      </LayOutWithNavBar>
+    </>
   );
 };
 

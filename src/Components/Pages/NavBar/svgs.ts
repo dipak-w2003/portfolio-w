@@ -2,7 +2,8 @@ import dropdown from './svgs/dropDown.svg'
 import github from './svgs/github.svg'
 import twitter from './svgs/twitter.svg'
 
-
+// ? dipak
+import dipak from './svgs/dipak.svg'
 
 // ? explore links
 import home from './svgs/home.svg'
@@ -28,5 +29,6 @@ export {
     connect,
     travel,
     top_left_svg,
-    bottom_right_svg
+    bottom_right_svg,
+    dipak
 }
