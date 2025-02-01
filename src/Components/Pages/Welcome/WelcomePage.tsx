@@ -25,7 +25,7 @@ const WelcomePage: React.FC<IPROPS> = ({ isWelcomed }) => {
     });
 
     tl.from("#greet", {
-      x: "-250%",
+      x: "-400%",
       duration: 0.5,
     });
     tl.from("#date-box", {
