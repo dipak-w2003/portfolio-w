@@ -14,9 +14,9 @@ import dashboard from './svgs/dashboard.svg'
 import connect from './svgs/connect.svg'
 import travel from './svgs/travel.svg'
 
-// ? Top - Bottom design svg
-import top_left_svg from './svgs/top_left_cube.svg'
-import bottom_right_svg from './svgs/bottom_right_cube.svg'
+
+// ? Welcome Page Greetings
+import good from './svgs/good.svg'
 export {
     dropdown,
     github,
@@ -28,7 +28,6 @@ export {
     dashboard,
     connect,
     travel,
-    top_left_svg,
-    bottom_right_svg,
-    dipak
+    dipak,
+    good
 }

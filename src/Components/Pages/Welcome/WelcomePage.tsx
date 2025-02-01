@@ -3,12 +3,40 @@ import {
   DateGreeting,
   getDateGreeting,
 } from "../../../Constants/timeBasedGreetings";
-import { Svg } from "./WelcomeSVGs";
+import "./welcomeStyle.css";
+import { good } from "../NavBar/svgs";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 interface IPROPS {
   setDoWelcomed?: () => void;
   isWelcomed?: boolean;
 }
 const WelcomePage: React.FC<IPROPS> = ({ isWelcomed }) => {
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    // gsap.to("#welcomePage", {
+    //   y: "-100%",
+    //   delay: 5,
+    // });
+
+    tl.from("#good", {
+      y: "-5%",
+      duration: 1.2,
+    });
+
+    tl.from("#greet", {
+      x: "-250%",
+      duration: 0.5,
+    });
+    tl.from("#date-box", {
+      y: "350%",
+      duration: 0.5,
+    });
+
+    tl.from("#loader-circle-102", {
+      bottom: "-20%",
+    });
+  });
   const standardUpdateTime: number = 600000;
   const [dateGreeting, setDateGreeting] =
     React.useState<DateGreeting>(getDateGreeting);
@@ -28,17 +56,39 @@ const WelcomePage: React.FC<IPROPS> = ({ isWelcomed }) => {
   return (
     <div
       id={`${!isWelcomed ? "welcomePage" : " "}`}
-      className={`flex flex-col justify-center w-full items-center full-screen gap-6 fira-font text-gray-200 bg-black `}
+      className={`flex flex-col justify-center w-full items-center full-screen gap-2 fira-font text-gray-200 bg-[#448e7e] selection:bg-transparent selection:text-amber-500 relative
+ p-4
+        `}
     >
-      {/* <img src={dipak} alt="" className="h-24 object-contain" /> */}
-      <h2 className="text-8xl font-semibold">{memoziedDnG.greet}</h2>
+      <span
+        id="good"
+        className="text-[8vw] leading-tight tracking-tighter  p-2 font-semibold text-center flex flex-col gap-3 items-center justify-center   "
+      >
+        <img src={good} alt="" className="w-[30vw]" />
+      </span>
+      <h5 id="greet" className="text-[8vw]">
+        {[memoziedDnG.greet]}
+      </h5>
 
-      <section className="text-4xl  *:p-2 *:h-20 *:w-32 *:rounded-md *:flex flex *:justify-center *:bg-[#054954] gap-2 justify-center items-center *:items-center">
-        <span>{memoziedDnG.yyyy}</span>
-        <span>{memoziedDnG.mm}</span>
-        <span>{memoziedDnG.dd}</span>
+      <section
+        id="date-box"
+        className="text-[5vw] rounded-md  p-4 h-[15vh] w-[50vw]  *:flex flex *:justify-center bg-[#2196f3]  justify-around  items-center *:items-center font-serif
+      cursor-pointer
+        transition-shadow
+      hover:shadow-[rgba(50,50,93,0.25)_0px_30px_60px_-12px_inset,rgba(0,0,0,0.3)_0px_18px_36px_-18px_inset]
+
+mb-24
+
+      "
+      >
+        <span id="yyyy">{memoziedDnG.yyyy}</span>
+        <span id="mm">{memoziedDnG.mm}</span>
+        <span id="dd"> {memoziedDnG.dd}</span>
       </section>
-      <Svg />
+      <div
+        id="loader-circle-102"
+        className="loader-circle-102 p-6 flex justify-center items-center"
+      ></div>
     </div>
   );
 };

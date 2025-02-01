@@ -23,10 +23,10 @@ const LandingPage = () => {
 
       <h3
         className="fira-font  w-[50%] font-semibold sm:text-[30px]  text-center tracking-tighter text-wrap selection:text-cyan-600
-      md:text-[45px] lg:text-[45px]
+      md:text-[49px] lg:text-[45px]
       xxs:w-[95%] xxs:text-5xl  
       xs:w-[90%] xs:text-5xl
-       sm:text-5xl lg:w-[600px] lg:text-5xl
+      sm:text-5xl lg:w-[600px] lg:text-5xl
       "
       >
         Building Code, Solving Problems & sharing innovation

@@ -15,7 +15,7 @@ const App = () => {
     const timeout = setTimeout(() => {
       setWelcomed(true);
       // Mark as welcomed after 5 seconds
-    }, 3500);
+    }, 50000000);
 
     // Cleanup function to clear the timeout if the component is unmounted
     return () => {
@@ -44,6 +44,11 @@ const App = () => {
     {
       path: "/dashboard",
       element: <Dashboard />,
+    },
+
+    {
+      path: "*",
+      element: <h2>Page Not Found</h2>,
     },
   ]);
 

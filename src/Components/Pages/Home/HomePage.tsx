@@ -24,3 +24,9 @@ const HomePage = () => {
 };
 
 export default HomePage;
+// xxs: bg - red - 800;
+// xs: bg - green - 800;
+// sm: bg - amber - 500;
+// md: bg - blue - 300;
+// lg: bg - black;
+// xl: bg - red - 500;

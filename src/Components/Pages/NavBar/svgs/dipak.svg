@@ -5,77 +5,77 @@
         svg path:nth-of-type(11) {
             stroke-dashoffset: 233.66854858398438;
             stroke-dasharray: 233.66854858398438;
-            animation: line-anime 9s infinite 0.333s forwards;
+            animation: line-anime 10s 1 0.333s forwards;
             transition: fill;
         }
 
         svg path:nth-of-type(10) {
             stroke-dashoffset: 227.155517578125;
             stroke-dasharray: 227.155517578125;
-            animation: line-anime 9s infinite 0.666s forwards;
+            animation: line-anime 10s 1 0.666s forwards;
             transition: fill;
         }
 
         svg path:nth-of-type(9) {
             stroke-dashoffset: 219.5888671875;
             stroke-dasharray: 219.5888671875;
-            animation: line-anime 9s infinite 0.999s forwards;
+            animation: line-anime 10s 1 0.999s forwards;
             transition: fill;
         }
 
         svg path:nth-of-type(8) {
             stroke-dashoffset: 210.0989990234375;
             stroke-dasharray: 210.0989990234375;
-            animation: line-anime 9s infinite 1.333s forwards;
+            animation: line-anime 10s 1 1.333s forwards;
             transition: fill;
         }
 
         svg path:nth-of-type(7) {
             stroke-dashoffset: 242.7718963623047;
             stroke-dasharray: 242.7718963623047;
-            animation: line-anime 9s infinite 1.666s forwards;
+            animation: line-anime 10s 1 1.666s forwards;
             transition: fill;
         }
 
         svg path:nth-of-type(6) {
             stroke-dashoffset: 180.03445434570312;
             stroke-dasharray: 180.03445434570312;
-            animation: line-anime 9s infinite 1.999s forwards;
+            animation: line-anime 10s 1 1.999s forwards;
             transition: fill;
         }
 
         svg path:nth-of-type(5) {
             stroke-dashoffset: 210.09939575195312;
             stroke-dasharray: 210.09939575195312;
-            animation: line-anime 9s infinite 2.333s forwards;
+            animation: line-anime 10s 1 2.333s forwards;
             transition: fill;
         }
 
         svg path:nth-of-type(4) {
             stroke-dashoffset: 267.0637512207031;
             stroke-dasharray: 267.0637512207031;
-            animation: line-anime 9s infinite 2.666s forwards;
+            animation: line-anime 10s 1 2.666s forwards;
             transition: fill;
         }
 
         svg path:nth-of-type(3) {
             stroke-dashoffset: 210.09878540039062;
             stroke-dasharray: 210.09878540039062;
-            animation: line-anime 9s infinite 2.999s forwards;
+            animation: line-anime 10s 1 2.999s forwards;
             transition: fill;
         }
 
         svg path:nth-of-type(2) {
             stroke-dashoffset: 193.96234130859375;
             stroke-dasharray: 193.96234130859375;
-            animation: line-anime 9s infinite 3.333s forwards;
+            animation: line-anime 10s 1 3.333s forwards;
             transition: fill;
         }
 
         svg path:nth-of-type(1) {
             stroke-dashoffset: 227.155517578125;
             stroke-dasharray: 227.155517578125;
-            animation: line-anime 9s infinite 3.666s forwards;
+            animation: line-anime 10s 1 3.666s forwards;
             transition: fill;
         }
 
