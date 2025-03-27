@@ -1,33 +1,32 @@
-import dropdown from './svgs/dropDown.svg'
-import github from './svgs/github.svg'
-import twitter from './svgs/twitter.svg'
+import dropdown from "./assets/svgs/dropDown.svg";
+import github from "./assets/svgs/github.svg";
+import twitter from "./assets/svgs/twitter.svg";
 
 // ? dipak
-import dipak from './svgs/dipak.svg'
+import dipak from "./assets/svgs/dipak.svg";
 
 // ? explore links
-import home from './svgs/home.svg'
-import about from './svgs/about.svg'
-import work from './svgs/work.svg'
-import blogs from './svgs/blogs.svg'
-import dashboard from './svgs/dashboard.svg'
-import connect from './svgs/connect.svg'
-import travel from './svgs/travel.svg'
-
+import home from "./assets/svgs/home.svg";
+import about from "./assets/svgs/about.svg";
+import work from "./assets/svgs/work.svg";
+import blogs from "./assets/svgs/blogs.svg";
+import dashboard from "./assets/svgs/dashboard.svg";
+import connect from "./assets/svgs/connect.svg";
+import travel from "./assets/svgs/travel.svg";
 
 // ? Welcome Page Greetings
-import good from './svgs/good.svg'
+import good from "./assets/svgs/good.svg";
 export {
-    dropdown,
-    github,
-    twitter,
-    home,
-    about,
-    work,
-    blogs,
-    dashboard,
-    connect,
-    travel,
-    dipak,
-    good
-}
+  dropdown,
+  github,
+  twitter,
+  home,
+  about,
+  work,
+  blogs,
+  dashboard,
+  connect,
+  travel,
+  dipak,
+  good,
+};

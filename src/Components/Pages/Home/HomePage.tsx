@@ -1,6 +1,8 @@
 import React from "react";
 import LayOutWithNavBar from "../NavBar/LayoutWithNavBar";
-import LandingPage from "./LandingPage";
+import HomeLandingPage from "./HomeLandingPage";
+import HomeAboutPage from "./HomeAboutPage";
+import HomeBlogPage from "./HomeBlogPage";
 
 const HomePage = () => {
   const [w, setW] = React.useState<number>(window.innerWidth);
@@ -16,8 +18,11 @@ const HomePage = () => {
   }, [w]);
   return (
     <>
-      <LayOutWithNavBar>
-        <LandingPage />
+      <LayOutWithNavBar >
+        {/* <LandingPage /> */}
+          <HomeLandingPage />
+          <HomeAboutPage />
+          <HomeBlogPage />
       </LayOutWithNavBar>
     </>
   );

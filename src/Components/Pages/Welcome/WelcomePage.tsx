@@ -55,9 +55,9 @@ const WelcomePage: React.FC<IPROPS> = ({ isWelcomed }) => {
   const memoziedDnG = React.useMemo(() => dateGreeting, [dateGreeting]);
   return (
     <div
-      id={`${!isWelcomed ? "welcomePage" : " "}`}
-      className={`flex flex-col justify-center w-full items-center full-screen gap-2 fira-font text-gray-200 bg-[#448e7e] selection:bg-transparent selection:text-amber-500 relative
- p-4
+      id={`${!isWelcomed && "welcomePage"}`}
+      className={`flex flex-col justify-center w-full items-center full-screen gap-2 fira-font text-gray-200
+        bg-[#1C1936] selection:bg-transparent selection:text-amber-500 relative p-4 shadow-[rgba(50,50,93,0.25)_0px_30px_60px_-12px_inset,rgba(0,0,0,0.3)_0px_18px_36px_-18px_inset]
         `}
     >
       <span
@@ -72,14 +72,11 @@ const WelcomePage: React.FC<IPROPS> = ({ isWelcomed }) => {
 
       <section
         id="date-box"
-        className="text-[5vw] rounded-md  p-4 h-[15vh] w-[50vw]  *:flex flex *:justify-center bg-[#2196f3]  justify-around  items-center *:items-center font-serif
+        className={`text-[5vw] rounded-md  p-4 h-[15vh] w-[50vw]  *:flex flex *:justify-center bg-[#2196f3]  justify-around  items-center *:items-center font-serif
       cursor-pointer
         transition-shadow
-      hover:shadow-[rgba(50,50,93,0.25)_0px_30px_60px_-12px_inset,rgba(0,0,0,0.3)_0px_18px_36px_-18px_inset]
-
-mb-24
-
-      "
+      shadow-[rgba(50,50,93,0.25)_0px_30px_60px_-12px_inset,rgba(0,0,0,0.3)_0px_18px_36px_-18px_inset] mb-24
+      `}
       >
         <span id="yyyy">{memoziedDnG.yyyy}</span>
         <span id="mm">{memoziedDnG.mm}</span>

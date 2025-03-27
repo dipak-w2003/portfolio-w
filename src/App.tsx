@@ -16,7 +16,7 @@ const App = () => {
       setWelcomed(true);
       // Mark as welcomed after 5 seconds
     }, 5500);
-
+    // 5500
     // Cleanup function to clear the timeout if the component is unmounted
     return () => {
       clearTimeout(timeout);

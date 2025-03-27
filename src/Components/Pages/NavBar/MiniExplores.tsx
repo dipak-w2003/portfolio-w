@@ -10,7 +10,7 @@ const MiniExplores = () => {
     "
     >
       <section>
-        <img src={img_pp} alt="img_pp" className="h-[133px] w-[133px]" />
+        <img src={""} alt="profile picture" className="h-[133px] w-[133px]" />
         <h2
           id="logo-name"
           className=" norican-font text-[37px] font-normal text-right tracking-[3.6px] transition-all md:text-3xl lg:text-4xl underline"
