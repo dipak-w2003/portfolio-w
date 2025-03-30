@@ -11,6 +11,8 @@ export default {
       boxShadow: {
         "custom-inset": "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
       },
+
+      scrollbarWidth: ["none"], // Add support for Firefox
     },
   },
   plugins: [],

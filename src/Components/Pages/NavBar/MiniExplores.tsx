@@ -7,6 +7,7 @@ const MiniExplores = () => {
     <main
       className="*:flex *:flex-col *:justify-center *:items-center fira-font *:mt-3
     motion-preset-expand 
+    
     "
     >
       <section>

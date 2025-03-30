@@ -5,26 +5,15 @@ import HomeAboutPage from "./HomeAboutPage";
 import HomeBlogPage from "./HomeBlogPage";
 
 const HomePage = () => {
-  const [w, setW] = React.useState<number>(window.innerWidth);
-  React.useEffect(() => {
-    window.addEventListener("resize", () => {
-      setW(window.innerWidth);
-    });
-    return () => {
-      window.removeEventListener("resize", () => {
-        setW(window.innerWidth);
-      });
-    };
-  }, [w]);
   return (
-    <>
-      <LayOutWithNavBar >
+    <React.Fragment>
+      <LayOutWithNavBar>
         {/* <LandingPage /> */}
-          <HomeLandingPage />
-          <HomeAboutPage />
-          <HomeBlogPage />
+        <HomeLandingPage />
+        <HomeAboutPage />
+        <HomeBlogPage />
       </LayOutWithNavBar>
-    </>
+    </React.Fragment>
   );
 };
 

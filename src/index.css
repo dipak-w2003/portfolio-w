@@ -45,3 +45,13 @@
 .custom-blend {
   background-blend-mode: normal;
 }
+
+/* Hide Scrollbar */
+.scrollbar-none-1 {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE & old Edge */
+}
+
+.scrollbar-none-2::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
