@@ -52,11 +52,12 @@ const App = () => {
     },
   ]);
 
-  return isWelcomed ? (
-    <RouterProvider router={router} />
-  ) : (
-    <WelcomePage isWelcomed={isWelcomed} />
-  );
+  // return isWelcomed ? (
+  //   <RouterProvider router={router} />
+  // ) : (
+  //   <WelcomePage isWelcomed={isWelcomed} />
+  // );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

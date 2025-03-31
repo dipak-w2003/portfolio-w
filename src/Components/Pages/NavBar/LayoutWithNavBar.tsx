@@ -13,6 +13,11 @@ const LayOutWithNavBar = (props: IProps) => {
   );
 };
 
+/*
+    @ This JSX/TSX function return dynamic re-rendering value in order to find the current screen size with the TailwindCSS standard likewise sm>=640px 
+    Todo: Confusion about less then or more than in order to find current screen is i.e: sm, xs, lg else through out `px`
+    
+    */
 function MediaQueryWidget() {
   const [w, setW] = React.useState<number>(window.innerWidth);
   React.useEffect(() => {
@@ -27,14 +32,14 @@ function MediaQueryWidget() {
   }, [w]);
 
   function analyzeMediaQuery(width: number) {
-    let determine = " ";
-    if (width > 320) determine = "XXS";
-    if (width > 480) determine = "XS";
-    if (width > 640) determine = "SM";
-    if (width > 768) determine = "MD";
-    if (width > 1024) determine = "LG";
-    if (width > 1280) determine = "XL";
-    if (width > 1536) determine = "2XL";
+    let determine: string = "";
+    if (width >= 320) determine = "XXS";
+    if (width >= 480) determine = "XS";
+    if (width >= 640) determine = "SM";
+    if (width >= 768) determine = "MD";
+    if (width >= 1024) determine = "LG";
+    if (width >= 1280) determine = "XL";
+    if (width >= 1536) determine = "2XL";
     return `${determine}`;
   }
 

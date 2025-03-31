@@ -1,4 +1,3 @@
-import img_pp from "../Home/imgs/landing_pp.png";
 import { connect, travel } from "./svgs";
 import { ExploreLinks } from "./exploreLinks";
 import { Link } from "react-router-dom";
