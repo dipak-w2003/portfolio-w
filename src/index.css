@@ -7,17 +7,23 @@
 :root {
   --nav-h: 65px;
 }
+* {
+  scroll-behavior: smooth;
+}
 .nav-h {
   height: var(--nav-h);
 }
 .full-screen {
-  /* ? calculated height for better height adjustment code */
-  /* ? generated from viewport.ts */
-  height: calc(var(--vh, 1vh) * 100);
+  /*
+  ? calculated height for better height adjustment code 
+  ? generated from (viewport.ts)[] 
+  */
+  height: 100vh;
   overflow: hidden;
 }
 .after-nav-h {
-  height: calc((var(--vh, 1vh) * 100) - var(--nav-h));
+  /* height: calc((var(--vh, 1vh) * 100) - var(--nav-h)); */
+  height: calc(100vh - var(--nav-h));
   overflow: hidden;
 }
 

@@ -44,7 +44,7 @@ function MediaQueryWidget() {
   }
 
   return (
-    <span className="widget-media-query fixed bottom-6 bg-cyan-900 text-2xl left-6 p-4 rounded-md text-white font-extrabold">
+    <span className="widget-media-query fixed bottom-6 z-50 bg-cyan-900 text-2xl left-6 p-4 rounded-md text-white font-extrabold">
       {analyzeMediaQuery(w)}:{w}px
     </span>
   );

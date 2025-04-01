@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: "320px",
-        xxs: "480px",
+        xxs: "320px",
+        xs: "480px",
       },
       boxShadow: {
         "custom-inset": "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
