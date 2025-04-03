@@ -22,8 +22,8 @@
   overflow: hidden;
 }
 .after-nav-h {
-  /* height: calc((var(--vh, 1vh) * 100) - var(--nav-h)); */
-  height: calc(100vh - var(--nav-h));
+  height: calc((var(--vh, 1vh) * 100) - var(--nav-h));
+  /* height: calc(100vh - var(--nav-h)); */
   overflow: hidden;
 }
 

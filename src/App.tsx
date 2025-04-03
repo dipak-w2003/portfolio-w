@@ -1,12 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.css";
+import { useEffect, useState } from "react";
+
+/* Service Pages */
 import HomePage from "./Components/Pages/Home/HomePage";
 import About from "./Components/Pages/About/About";
-import Work from "./Components/Pages/Work/Work";
+import Project from "./Components/Pages/Project/Project";
 import BlogsPage from "./Components/Pages/Blogs/Blogs";
 import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import WelcomePage from "./Components/Pages/Welcome/WelcomePage";
-import { useEffect, useState } from "react";
+import "./App.css";
 
 const App = () => {
   const [isWelcomed, setWelcomed] = useState<boolean>(false);
@@ -35,7 +37,7 @@ const App = () => {
     },
     {
       path: "/project",
-      element: <Work />,
+      element: <Project />,
     },
     {
       path: "/blog",

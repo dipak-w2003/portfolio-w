@@ -1,11 +1,11 @@
 import LayOutWithNavBar from "../NavBar/LayoutWithNavBar";
 
-const Work = () => {
+const Project = () => {
   return (
     <LayOutWithNavBar>
-      <div>Work</div>
+      <div>Project</div>
     </LayOutWithNavBar>
   );
 };
 
-export default Work;
+export default Project;

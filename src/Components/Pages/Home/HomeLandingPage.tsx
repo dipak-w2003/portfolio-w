@@ -21,13 +21,13 @@ const HomeLandingPage = () => {
 
   useGSAP(() => {
     const tl_ = gsap.timeline();
-    tl_.from("header", {
+    gsap.from("header", {
       y: "-100%",
     });
-    tl_.from("#cloud-left", {
+    gsap.from("#cloud-left", {
       x: "-100%",
     });
-    tl_.from("#cloud-right", {
+    gsap.from("#cloud-right", {
       x: "100%",
     });
     for (let i = 0; i < CODES_QUOTE.length; i++) {

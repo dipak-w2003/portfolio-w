@@ -22,26 +22,21 @@ const NavBar = () => {
   }, [location, toggle]);
   return (
     <nav
-      className={`w-full h-[65px] bg-[rgba(255,255,255,0.86)] bg-blend-normal
+      className={`w-full h-[65px] bg-[rgb(255,255,255)] bg-blend-normal
        flex items-center px-6 justify-between fira-font
       sticky top-0
       z-40
 
     `}
     >
-      {/* shadow-[0px_5px_4px_rgba(0,0,0,0.25)] */}
-      {/* <h2
-        id="logo-name"
-        className="norican-font  text-[37px] font-normal text-right tracking-[3.6px] transition-all md:text-3xl lg:text-4xl"
-      >
-        Dipak Tamang
-      </h2> */}
       <img
         id="logo-name"
         src={dipak}
         className="transition-all"
         alt="logo_dipak"
       />
+
+      {/* Hyper Links */}
       <ul
         id="links"
         className="hidden  md:flex gap-4 lg:flex xl:flex *:cursor-pointer relative  *:hover:*:text-white *:transition-colors"
@@ -60,6 +55,7 @@ const NavBar = () => {
           />
           <div className="absolute w-[80px] bg-[red] transition-all"></div>
         </li>
+
         {/* Drop-down-options */}
         {toggle && (
           <div
