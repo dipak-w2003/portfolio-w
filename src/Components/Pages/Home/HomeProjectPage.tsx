@@ -1,12 +1,12 @@
-interface I_CARDS {
-  id: number;
-  projectName: string;
-  descriptions: string;
-  desPoints?: string[];
-  link: string;
-}
+// interface I_CARDS {
+//   id: number;
+//   projectName: string;
+//   descriptions: string;
+//   desPoints?: string[];
+//   link: string;
+// }
 export default function HomeProjectPage() {
-  const CARDS_DETAILS: I_CARDS[] = [
+ /* const CARDS_DETAILS: I_CARDS[] = [
     {
       id: 1,
       projectName: "Manjaro Clone",
@@ -36,7 +36,7 @@ export default function HomeProjectPage() {
       desPoints: ["Free try.", "Apps to discover"],
       link: "xyz",
     },
-  ];
+  ];*/
   return (
     <main>
       <header>Project Page</header>

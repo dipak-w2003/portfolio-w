@@ -1,14 +1,16 @@
+import { useEffect, useState, Suspense, lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useEffect, useState } from "react";
-
-/* Service Pages */
-import HomePage from "./Components/Pages/Home/HomePage";
-import About from "./Components/Pages/About/About";
-import Project from "./Components/Pages/Project/Project";
-import BlogsPage from "./Components/Pages/Blogs/Blogs";
-import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import WelcomePage from "./Components/Pages/Welcome/WelcomePage";
+import { BLOGS_COLLECTIONS_INFOS } from "./Components/Pages/Blogs/Collections/BLOGS_LIST";
 import "./App.css";
+
+// Lazy load pages
+const HomePage = lazy(() => import("./Components/Pages/Home/HomePage"));
+const About = lazy(() => import("./Components/Pages/About/About"));
+const Project = lazy(() => import("./Components/Pages/Project/Project"));
+const BlogsPage = lazy(() => import("./Components/Pages/Blogs/Blogs"));
+const Dashboard = lazy(() => import("./Components/Pages/Dashboard/Dashboard"));
+const PageNotFound = lazy(() => import("./Components/Pages/PageNotFound"));
 
 const App = () => {
   const [isWelcomed, setWelcomed] = useState<boolean>(false);
@@ -16,15 +18,10 @@ const App = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setWelcomed(true);
-      // Mark as welcomed after 5 seconds
     }, 5500);
-    // 5500
-    // Cleanup function to clear the timeout if the component is unmounted
-    return () => {
-      clearTimeout(timeout);
-    };
+
+    return () => clearTimeout(timeout);
   }, []);
-  // Empty dependency array ensures this effect runs only once
 
   const router = createBrowserRouter([
     {
@@ -42,24 +39,30 @@ const App = () => {
     {
       path: "/blog",
       element: <BlogsPage />,
+      children: BLOGS_COLLECTIONS_INFOS.map((blog) => ({
+        path: blog.blogPath,
+        element: <blog.blogElement />,
+      })),
     },
     {
       path: "/dashboard",
       element: <Dashboard />,
     },
-
     {
       path: "*",
-      element: <h2>Page Not Found</h2>,
+      element: <PageNotFound />,
     },
   ]);
 
   return isWelcomed ? (
-    <RouterProvider router={router} />
+    <Suspense
+      fallback={<div className="text-white text-center p-8">Loading...</div>}
+    >
+      <RouterProvider router={router} />
+    </Suspense>
   ) : (
     <WelcomePage isWelcomed={isWelcomed} />
   );
-  // return <RouterProvider router={router} />;
 };
 
 export default App;
