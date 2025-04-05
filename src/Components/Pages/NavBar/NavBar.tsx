@@ -25,7 +25,7 @@ const NavBar = () => {
       className={`w-full h-[65px] bg-[rgb(255,255,255)] bg-blend-normal
        flex items-center px-6 justify-between fira-font
       sticky top-0
-      z-40
+      z-[9999999999]
 
     `}
     >
@@ -104,24 +104,17 @@ const NavBar = () => {
           Login
         </button>
       </ul>
+
       {/* ? mobile Ham Menu */}
-      <IoMenuSharp
-        onClick={onFocus_onClick}
-        className="text-4xl md:hidden block lg:hidden xl:hidden cursor-pointer "
-        id="ham-icon"
-      />
-      {/* Drop-down-options */}
-      {toggle && (
-        <div
-          className="  absolute right-0  top-0 w-full full-screen border border-transparent
-            bg-[#f7f7f7] shadow-[4px_8px_4px_rgba(0,0,0,0.25)]
-            md:hidden flex flex-col justify-around items-center lg:hidden xl:hidden
-            "
-        >
-          <MiniExplores />
-          <button onClick={onFocus_onClick}>Close</button>
-        </div>
-      )}
+      <React.Fragment>
+        <IoMenuSharp
+          onClick={onFocus_onClick}
+          className="text-4xl md:hidden block lg:hidden xl:hidden cursor-pointer "
+          id="ham-icon"
+        />
+        {/* Side Nav or Mini nav for mobiles*/}
+        {toggle && <MiniExplores setToggle={onFocus_onClick} />}
+      </React.Fragment>
     </nav>
   );
 };
@@ -142,6 +135,7 @@ function RenderGSAP() {
         duration: 0.66,
       });
     });
+
     // gsap.from("#ham-icon", {
     //   y: -100,
     //   delay: 0.66,

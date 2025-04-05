@@ -6,8 +6,8 @@ export function BlogsMarquee() {
   useGSAP(() => {
     gsap.to("#blogs-marquee ul", {
       x: "100%",
-      duration: 20,
-      yoyo: true,
+      duration: 10,
+      // yoyo: true,
       repeat: -1,
     });
   });
@@ -17,17 +17,15 @@ export function BlogsMarquee() {
       id="blogs-marquee"
       className="blogs-marquee flex absolute top-0 h-fit shadow-md w-full"
     >
-      <ul className="w-full  flex gap-8">
+      <ul className="w-[500%]   flex  justify-evenly items-center gap-8">
         {BLOGS_COLLECTIONS_INFOS &&
           BLOGS_COLLECTIONS_INFOS.map((blog) => {
             return (
-              <li className="p-2 px-4 font-semibold ">
-                <Link
-                  key={`${blog.blogName}?${blog.blogPath}`}
-                  to={`blog/${blog.blogPath}`}
-                >
-                  {blog.blogName}
-                </Link>
+              <li
+                key={`${blog.blogName}?${blog.blogPath}`}
+                className="p-2 px-4 font-semibold "
+              >
+                <Link to={`blog/${blog.blogPath}`}>{blog.blogName}</Link>
               </li>
             );
           })}

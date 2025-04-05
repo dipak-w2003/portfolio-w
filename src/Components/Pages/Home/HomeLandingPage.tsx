@@ -42,14 +42,7 @@ const HomeLandingPage = () => {
     <main
       className={`after-nav-h p-4 bg-[#A5AFB8]  relative flex flex-col items-center `}
     >
-      <header
-        className="norican-font  text-nowrap text-white drop-shadow-lg mt-[2vw]
-      
-      xxs:text-5xl
-      sm:text-7xl
-      selection:text-[#351c43]
-      "
-      >
+      <header className="norican-font  text-nowrap text-white drop-shadow-lg mt-[2vw] xxs:text-5xl sm:text-7xl selection:text-[#351c43]">
         Programming
       </header>
 
@@ -69,7 +62,6 @@ const HomeLandingPage = () => {
             id={code.title}
             key={code.title}
             className="prog-card bg-black relative overflow-hidden rounded-[38px]
-            
             xxs:w-[100px] xxs:*:w-[100px] xxs:h-[100px] xxs:*:h-[100px] xxs:rounded-[20px]
             sm:w-[145px] sm:*:w-[145px] sm:h-[130px] sm:*:h-[130px] sm:rounded-[25px]
             md:w-[170px] md:*:w-[170px] md:h-[175px] md:*:h-[175px] md:rounded-[30px]
@@ -82,23 +74,17 @@ const HomeLandingPage = () => {
                xxs:rounded-[20px] xxs:-mt-[0]
                sm:rounded-[25px] sm:-mt-[1.2px]
                md:rounded-[30px] md:-mt-[1.6px]
-               lg:rounded-[38px]
-               
-               "
+               lg:rounded-[38px]"
             >
               {/* ? Header side */}
-              <span
-                className=" h-1/2 w-full relative overflow-hidden 
-              
-              "
-              >
+              <span className=" h-1/2 w-full relative overflow-hidden">
                 <img
                   id="cloud-left"
                   src={cloudLeft}
                   alt="cloudLeft"
                   className="cloud-left absolute top-4   
                   xxs:h-8 xxs:-left-2
-                 sm:h-10 sm:w-16
+                  sm:h-10 sm:w-16
                   md:-left-10 md:h-20 md:w-32"
                 />
                 <img
@@ -118,11 +104,14 @@ const HomeLandingPage = () => {
               </span>
 
               {/* ? Footer side */}
-
               <span className=" h-1/2 w-full flex flex-col justify-evenly">
                 <article className="flex items-center justify-center h-fit">
                   <h2 className="text-2xl">{code.title}</h2>
-                  <img src={crystal} alt="." className="xxs:hidden sm:block" />
+                  <img
+                    src={crystal}
+                    alt="crystal-img"
+                    className="xxs:hidden sm:block"
+                  />
                 </article>
                 <article className="flex items-center justify-center h-fit">
                   <p className="text-[15px] xxs:hidden md:block">
@@ -140,11 +129,7 @@ const HomeLandingPage = () => {
         id="cloud-left"
         src={cloudLeft}
         alt="cloudLeft"
-        className="h-96 absolute bottom-0 -left-6
-        xxs:h-40
-        sm:h-60
-        lg:h-90
-        xl:h-96
+        className="h-96 absolute bottom-0 -left-6 xxs:h-40 sm:h-60 lg:h-90 xl:h-96
         "
       />
       <img

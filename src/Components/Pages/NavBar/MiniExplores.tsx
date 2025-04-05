@@ -1,16 +1,24 @@
 import { connect, travel } from "./svgs";
 import { ExploreLinks } from "./exploreLinks";
 import { Link } from "react-router-dom";
-const MiniExplores = () => {
+interface MiniExploresProps {
+  setToggle: (toggle: boolean) => void;
+}
+const MiniExplores: React.FC<MiniExploresProps> = ({ setToggle }) => {
   return (
     <main
-      className="*:flex *:flex-col *:justify-center *:items-center fira-font *:mt-3
-    motion-preset-expand 
-    
-    "
+      className="*:flex *:flex-col *:justify-center *:items-center fira-font *:mt-3 absolute right-0  top-0 w-full full-screen border border-transparent  
+      bg-[#f7f7f7] shadow-[4px_8px_4px_rgba(0,0,0,0.25)] md:hidden flex flex-col justify-around items-center lg:hidden xl:hidden"
     >
+      {/* ? Profile Infos */}
       <section>
-        <img src={""} alt="profile picture" className="h-[133px] w-[133px]" />
+        <img
+          src={
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHV45JoJoDbt7gBJGKoxSICZD62NOOzD2qCw&s"
+          }
+          alt="profile picture"
+          className="h-[133px] w-[133px] rounded-full"
+        />
         <h2
           id="logo-name"
           className=" norican-font text-[37px] font-normal text-right tracking-[3.6px] transition-all md:text-3xl lg:text-4xl underline"
@@ -56,6 +64,9 @@ const MiniExplores = () => {
           })}
         </ul>
       </section>
+      <button className="" onClick={() => setToggle(false)}>
+        Close
+      </button>
     </main>
   );
 };
