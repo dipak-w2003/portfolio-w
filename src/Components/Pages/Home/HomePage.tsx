@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import LayOutWithNavBar from "../NavBar/LayoutWithNavBar";
+import FullScreenLoader from "../../ui/FullScreenLoaderSkeleton1";
 
 // Lazy load components
 const HomeLandingPage = lazy(() => import("./HomeLandingPage"));
@@ -10,7 +11,7 @@ const Footer1 = lazy(() => import("../Footer/Footer1"));
 const HomePage: React.FC = () => {
   return (
     <LayOutWithNavBar>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<FullScreenLoader />}>
         <HomeLandingPage />
         <HomeAboutPage />
         <HomeBlogPage />
