@@ -1,18 +1,22 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import LayOutWithNavBar from "../NavBar/LayoutWithNavBar";
-import HomeLandingPage from "./HomeLandingPage";
-import HomeAboutPage from "./HomeAboutPage";
-import HomeBlogPage from "./HomeBlogPage";
 
-const HomePage = () => {
+// Lazy load components
+const HomeLandingPage = lazy(() => import("./HomeLandingPage"));
+const HomeAboutPage = lazy(() => import("./HomeAboutPage"));
+const HomeBlogPage = lazy(() => import("./HomeBlogPage"));
+const Footer1 = lazy(() => import("../Footer/Footer1"));
+
+const HomePage: React.FC = () => {
   return (
-    <React.Fragment>
-      <LayOutWithNavBar>
+    <LayOutWithNavBar>
+      <Suspense fallback={<div>Loading...</div>}>
         <HomeLandingPage />
         <HomeAboutPage />
         <HomeBlogPage />
-      </LayOutWithNavBar>
-    </React.Fragment>
+        <Footer1 />
+      </Suspense>
+    </LayOutWithNavBar>
   );
 };
 

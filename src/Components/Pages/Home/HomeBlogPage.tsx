@@ -21,7 +21,7 @@ const HomeBlogPage = () => {
     <main
       data-reveal
       ref={homeAboutRef}
-      className={` bg-[#ADC6E5] after-nav-h flex flex-col items-center justify-center gap-4 relative `}
+      className={` bg-[#ADC6E5] h-[100vh] flex flex-col items-center justify-center gap-4 relative `}
     >
       {/* ? Blog Marquee */}
       <BlogsMarquee />
