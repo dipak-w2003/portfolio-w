@@ -1,7 +1,3 @@
-import { Link } from "react-router-dom";
-import computerImg from "./assets/imgs/Computer.png";
-import bulletSvg from "./assets/svgs/Bullet.svg";
-import { BlogsMarquee } from "../Blogs/BlogsMarquee";
 import { useRef } from "react";
 import useScrollReveal from "../../../Hooks/useScrollReveal";
 import { BLOGS_COLLECTIONS_INFOS } from "../Blogs/Collections/BLOGS_LIST";
