@@ -1,6 +1,5 @@
-
 const LogicBuilding_Blog = () => {
-  return <div>LogicBuilding_Blog</div>;
+  return <div className="h-full">LogicBuilding_Blog</div>;
 };
 
 export default LogicBuilding_Blog;

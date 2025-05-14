@@ -8,8 +8,7 @@
   gap: 16px;
 } */
 
-#links li,
-button {
+#links li,#links button {
   justify-content: space-around;
   display: flex;
   align-items: center;

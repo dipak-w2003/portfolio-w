@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
 import footer1IMG from "./Assets/imgs/footer1.png";
 import fireIMG from "./Assets/imgs/Fire.png";
+import useScrollReveal from "../../../Hooks/useScrollReveal";
 const Footer1: React.FC = () => {
+  const homeFooterRef = useRef<HTMLDivElement | null>(null);
+
+  // Custom Hook : ScrollReveal
+  useScrollReveal(homeFooterRef);
   return (
     <footer
+      ref={homeFooterRef}
       className={`after-nav-h  w-full relative flex flex-col items-start justify-end text-white`}
+      data-reveal
     >
       <img
         src={footer1IMG}
         alt=""
         className="h-full w-full absolute -z-1 top-0 object-cover"
+        data-reveal
       />
 
       <section className="footer-down-contents relative  h-fit w-full flex py-5  gap-2 flex-col">
-        <FooterDownContent_Header />
-        <FooterDownContent_Top />
-        <FooterDownContent_Bottom />
+        <FooterDownContent_Header data-reveal />
+        <FooterDownContent_Top data-reveal />
+        <FooterDownContent_Bottom data-reveal />
       </section>
     </footer>
   );
@@ -57,9 +65,10 @@ function FooterDownContent_Top() {
           "github@",
           "twitter@",
           "whatsapp",
-        ].map((e) => {
+        ].map((e, index) => {
           return (
             <a
+              key={`alinks?link=${e}&&id${index}`}
               href={`#${e}`}
               className="  px-2 border-l-[#69B478] border-l-4 h-fit  rounded font-semibold text-lg xxs:text-sm xl:text-lg"
             >

@@ -20,12 +20,13 @@ const BlogsPage = () => {
     <LayOutWithNavBar>
       {/* Conditional rendering: If we're at `/blog` (root), show the list of blogs */}
       {location.pathname === "/blog" ? (
-        <main className="h-full w-full">
+        <main className="h-[100vh] w-full">
           {/* Map through all blogs and display them */}
+          {/* Filterout last blogs(lastest cause it's already rendered  on HomeBlogPage *for now*) */}
           {BLOGS_COLLECTIONS_INFOS &&
-            BLOGS_COLLECTIONS_INFOS.map((blog, index) => (
-              <blog.blogElement key={index} />
-            ))}
+            BLOGS_COLLECTIONS_INFOS.filter(
+              (blog) => blog.id !== BLOGS_COLLECTIONS_INFOS.length
+            ).map((blog, index) => <blog.blogElement key={index} />)}
         </main>
       ) : (
         // If on a nested blog route, render the specific blog using <Outlet />

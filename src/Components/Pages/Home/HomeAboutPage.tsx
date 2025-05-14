@@ -69,7 +69,7 @@ const HomeAboutPage = () => {
             title="explore-about-page"
             onMouseEnter={() => setToggle(true)}
             onMouseLeave={() => setToggle(false)}
-            className="rounded-none flex items-center w-fit xxs:mt-2 xxs:gap-2 xxs:p-4 xxs:text-lg  lg:mt-0 xl:mt-10"
+            className="rounded-md transition-all flex items-center w-fit xxs:mt-2 xxs:gap-2 xxs:p-4 xxs:text-lg  lg:mt-0 xl:mt-10 border"
           >
             <Link to={"/about"}>Know More</Link>
             <FaRegArrowAltCircleRight

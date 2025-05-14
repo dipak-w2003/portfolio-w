@@ -10,13 +10,13 @@ interface ICodeQuote {
 }
 const HomeLandingPage = () => {
   const CODES_QUOTE: ICodeQuote[] = [
-    { title: "Code", paragraph: "Lorem Ipsum wak" },
-    { title: "Create", paragraph: "Lorem Ipsum wak" },
-    { title: "Debug", paragraph: "Lorem Ipsum wak" },
-    { title: "Test", paragraph: "Lorem Ipsum wak" },
-    { title: "Deploy", paragraph: "Lorem Ipsum wak" },
-    { title: "Scale", paragraph: "Lorem Ipsum wak" },
-    { title: "Repeat", paragraph: "Lorem Ipsum wak" },
+    { title: "Code", paragraph: "Write logic with clarity." },
+    { title: "Create", paragraph: "Design intuitive user flows." },
+    { title: "Debug", paragraph: "Fix issues with precision." },
+    { title: "Test", paragraph: "Validate every critical path." },
+    { title: "Deploy", paragraph: "Launch with full confidence." },
+    { title: "Scale", paragraph: "Grow without breaking things." },
+    { title: "Repeat", paragraph: "Refine, improve, and evolve." },
   ];
 
   useGSAP(() => {
@@ -114,7 +114,7 @@ const HomeLandingPage = () => {
                   />
                 </article>
                 <article className="flex items-center justify-center h-fit">
-                  <p className="text-[15px] xxs:hidden md:block">
+                  <p className="text-[15px] xxs:hidden md:block line-clamp-6 leading-tight text-center">
                     {code.paragraph}
                   </p>
                 </article>
