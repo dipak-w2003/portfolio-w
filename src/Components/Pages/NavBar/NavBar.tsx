@@ -16,8 +16,8 @@ const NavBar = () => {
   React.useEffect(() => {
     sessionStorage.setItem("routeChaged", JSON.stringify(false));
     return () => {
-      console.log("updated drop-down, ", toggle);
-      console.log("location changed, ", location);
+      // console.log("updated drop-down, ", toggle);
+      // console.log("location changed, ", location);
     };
   }, [location, toggle]);
   return (
@@ -121,25 +121,15 @@ const NavBar = () => {
 
 export default NavBar;
 
-function RenderGSAP() {
-  useGSAP(() => {
+async function RenderGSAP() {
+  await useGSAP(() => {
     const ids = ["explore", "github", "twitter", "login"];
     const tl = gsap.timeline();
-    gsap.from(`#logo-name`, {
-      // x: -100,
-      // duration: 0.66,
-    });
     ids.forEach((ids) => {
       tl.from(`#${ids}`, {
         y: -100,
         duration: 0.66,
       });
     });
-
-    // gsap.from("#ham-icon", {
-    //   y: -100,
-    //   delay: 0.66,
-    //   duration: 0.66,
-    // });
   });
 }

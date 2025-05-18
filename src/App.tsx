@@ -1,6 +1,5 @@
 import { useEffect, useState, Suspense, lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import WelcomePage from "./Components/Pages/Welcome/WelcomePage";
 import { BLOGS_COLLECTIONS_INFOS } from "./Components/Pages/Blogs/Collections/BLOGS_LIST";
 import "./App.css";
 
@@ -11,6 +10,9 @@ const Project = lazy(() => import("./Components/Pages/Project/Project"));
 const BlogsPage = lazy(() => import("./Components/Pages/Blogs/Blogs"));
 const Dashboard = lazy(() => import("./Components/Pages/Dashboard/Dashboard"));
 const PageNotFound = lazy(() => import("./Components/Pages/PageNotFound"));
+const WelcomePage = lazy(
+  () => import("./Components/Pages/Welcome/WelcomePage")
+);
 
 const App = () => {
   const [isWelcomed, setWelcomed] = useState<boolean>(false);
@@ -56,7 +58,11 @@ const App = () => {
 
   return isWelcomed ? (
     <Suspense
-      fallback={<div className="text-white text-center p-8">Loading...</div>}
+      fallback={
+        <div className="text-white text-center p-8">
+          Portfolio UI :(-):Loading...
+        </div>
+      }
     >
       <RouterProvider router={router} />
     </Suspense>

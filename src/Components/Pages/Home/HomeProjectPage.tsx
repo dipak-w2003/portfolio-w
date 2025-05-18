@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import fireIMG from "./assets/imgs/Fire.png";
 import cloverSVG from "./assets/svgs/clover.svg";
 import { CARDS_DETAILS, colorStack } from "./ProjectCards";
@@ -39,69 +39,91 @@ export default function HomeProjectPage() {
         {CARDS_DETAILS.length > 0 &&
           CARDS_DETAILS.map((card, index) => {
             return (
-              <div
+              <Suspense
                 key={`${card.projectName}-${card.projectName}-${card.id}:${index}`}
-                className="card h-[280px] w-[350px] flex flex-col justify-between transition-all *:transition-all  bg-white rounded-md relative"
-                data-reveal
-              >
-                {/* First Heading */}
-                <TopHeading
-                  data-reveal
-                  index={index}
-                  projectName={card.projectName}
-                />
-
-                {/* middle content */}
-                <section
-                  data-reveal
-                  className="project-indicator-wrapper flex justify-around w-full mt-2"
-                >
-                  <div className="project-indicator-wrapper flex gap-4 items-center">
-                    <span className="project-status-wrapper-circle w-6 h-6 bg-gray-200 shadow rounded-full *:rounded-full overflow-hidden flex justify-center items-center">
-                      <button
-                        title={`project::${card.projectStatus}`}
-                        className={`project-status-color border-0 ${
-                          colorStack[card.projectStatus]
-                        } w-2/4 h-2/4 text bg-black `}
-                      />
-                    </span>
-                    <button
-                      onClick={() =>
-                        handleMultiSelection(
-                          `${card.id}-${card.projectName}-${card.projectStatus}`
-                        )
-                      }
-                      type="button"
-                      className="w-6 h-6 rounded-full bg-[#234F76] text-md text-white font-semibold text-center"
-                    >
-                      i
-                    </button>
+                fallback={
+                  <div className="h-[280px] w-[350px] bg-white text-3xl">
+                    {card.projectName}
                   </div>
-
-                  <button className="bg-[#234F76] border-none text-lg px-5 py-1 text-white rounded">
-                    <a href={`#${card.link}`} target="_blank">
-                      Visit
-                    </a>
-                  </button>
-                </section>
-
-                {/* bottom content */}
-                <section
+                }
+              >
+                <div
+                  key={`${card.projectName}-${card.projectName}-${card.id}:${index}`}
+                  className="card h-[280px] w-[350px] flex flex-col justify-between transition-all *:transition-all  bg-white rounded-md relative"
                   data-reveal
-                  className="project-indicator-wrapper flex justify-around w-full shadow-md shadow-black h-2/4 overflow-hidden rounded-b"
                 >
-                  <h4 className="text-xl underline">Stats</h4>
-                </section>
-                {/* Drawer */}
-                {selectedCards.includes(
-                  `${card.id}-${card.projectName}-${card.projectStatus}`
-                ) && (
-                  <div
+                  {/* First Heading */}
+                  <TopHeading
                     data-reveal
-                    className="drawer transition-all ease-linear absolute z-10 top-0 h-full w-2/4 bg-[#131E30] -right-0 rounded-r  shadow-[#d1d5db] shadow-inner  "
-                  ></div>
-                )}
-              </div>
+                    index={index}
+                    projectName={card.projectName}
+                  />
+
+                  {/* middle content */}
+                  <section
+                    data-reveal
+                    className="project-indicator-wrapper flex justify-around w-full mt-2"
+                  >
+                    <div className="project-indicator-wrapper flex gap-4 items-center">
+                      <span className="project-status-wrapper-circle w-6 h-6 bg-gray-200 shadow rounded-full *:rounded-full overflow-hidden flex justify-center items-center">
+                        <button
+                          title={`project::${card.projectStatus}`}
+                          className={`project-status-color border-0 ${
+                            colorStack[card.projectStatus]
+                          } w-2/4 h-2/4 text bg-black `}
+                        />
+                      </span>
+                      <button
+                        onClick={() =>
+                          handleMultiSelection(
+                            `${card.id}-${card.projectName}-${card.projectStatus}`
+                          )
+                        }
+                        type="button"
+                        className="w-6 h-6 rounded-full bg-[#234F76] text-md text-white font-semibold text-center"
+                      >
+                        i
+                      </button>
+                    </div>
+
+                    <button className="bg-[#234F76] border-none text-lg px-5 py-1 text-white rounded">
+                      <a href={`#${card.link}`} target="_blank">
+                        Visit
+                      </a>
+                    </button>
+                  </section>
+
+                  {/* bottom content */}
+                  <section
+                    data-reveal
+                    className="project-indicator-wrapper flex justify-around w-full shadow-md shadow-black h-2/4 overflow-hidden rounded-b"
+                  >
+                    <h4 className="text-xl underline">Stats</h4>
+                  </section>
+                  {/* Drawer */}
+                  {selectedCards.includes(
+                    `${card.id}-${card.projectName}-${card.projectStatus}`
+                  ) && (
+                    <div
+                      data-reveal
+                      className="drawer transition-all ease-linear absolute z-10 top-0 h-full w-full bg-[#131E30] -right-0 rounded-r  shadow-[#d1d5db] shadow-inner  "
+                    >
+                      {/* Button */}
+                      <button
+                        className="bg-white px-4 py-2 text-2xl rounded-full "
+                        onClick={() =>
+                          handleMultiSelection(
+                            `${card.id}-${card.projectName}-${card.projectStatus}`
+                          )
+                        }
+                      >
+                        {" "}
+                        X
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </Suspense>
             );
           })}
       </section>

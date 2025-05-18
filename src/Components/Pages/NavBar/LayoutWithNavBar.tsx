@@ -8,7 +8,7 @@ const LayOutWithNavBar = (props: IProps) => {
     <main className="flex flex-col relative">
       <NavBar />
       <section className="">{props.children}</section>
-      <MediaQueryWidget />
+      {/* <MediaQueryWidget /> */}
     </main>
   );
 };
