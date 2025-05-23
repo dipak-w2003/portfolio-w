@@ -23,19 +23,25 @@ export default function HomeProjectPage() {
   return (
     <main
       data-reveal
-      className="h-[100vh] w-full bg-[#131E30] flex flex-col justify-center items-center gap-9 overflow-hidden"
+      className="min-h-[100vh] w-full bg-[#131E30] flex flex-col justify-center items-center gap-9 overflow-x-hidden"
       ref={homeProjectRef}
     >
-      <header className="text-5xl text-white flex justify-center items-center gap-2">
+      <header
+        className="text-5xl text-white flex justify-center items-center gap-2 mt-4
+      xxs:text-4xl
+      sm:text-5xl
+      "
+      >
         <h2 className="">Project Page</h2>
-        <img src={cloverSVG} alt="clover-project-svg-logo" />
+        <img
+          src={cloverSVG}
+          alt="clover-project-svg-logo"
+          className="xxs:hidden xs:block xs:h-14"
+        />
       </header>
 
       {/* ? Cards */}
-      <section
-        className="p-6 flex  flex-wrap justify-center  gap-5  "
-        data-reveal
-      >
+      <section className="p-6 flex  flex-wrap justify-center  gap-5  h-fit ">
         {CARDS_DETAILS.length > 0 &&
           CARDS_DETAILS.map((card, index) => {
             return (
@@ -49,7 +55,11 @@ export default function HomeProjectPage() {
               >
                 <div
                   key={`${card.projectName}-${card.projectName}-${card.id}:${index}`}
-                  className="card h-[280px] w-[350px] flex flex-col justify-between transition-all *:transition-all  bg-white rounded-md relative"
+                  className="card h-[280px] w-[350px] flex flex-col justify-between transition-all *:transition-all  bg-white rounded-md relative
+                  xxs:h-[250px] xxs:w-[250px]
+                  xs:w-[350px]
+                  sm:h-[280px] sm:w-[350px]
+                  "
                   data-reveal
                 >
                   {/* First Heading */}
@@ -61,8 +71,12 @@ export default function HomeProjectPage() {
 
                   {/* middle content */}
                   <section
-                    data-reveal
-                    className="project-indicator-wrapper flex justify-around w-full mt-2"
+                    className="project-indicator-wrapper flex justify-around w-full 
+                  xxs:mt-10
+                  sm:mt-2
+                  
+                  
+                  "
                   >
                     <div className="project-indicator-wrapper flex gap-4 items-center">
                       <span className="project-status-wrapper-circle w-6 h-6 bg-gray-200 shadow rounded-full *:rounded-full overflow-hidden flex justify-center items-center">
@@ -93,11 +107,8 @@ export default function HomeProjectPage() {
                     </button>
                   </section>
 
-                  {/* bottom content */}
-                  <section
-                    data-reveal
-                    className="project-indicator-wrapper flex justify-around w-full shadow-md shadow-black h-2/4 overflow-hidden rounded-b"
-                  >
+                  {/* bottom content -> It will include tech percenatge of code line used accordingly like github does */}
+                  <section className="project-indicator-wrapper flex justify-around w-full shadow-md shadow-black h-2/4 overflow-hidden rounded-b">
                     <h4 className="text-xl underline">Stats</h4>
                   </section>
                   {/* Drawer */}
@@ -133,9 +144,18 @@ export default function HomeProjectPage() {
 
 function TopHeading(prop: { projectName: string; index: number }) {
   return (
-    <article className="flex  items-center p-2 h-1/4  gap-5 border-b-2   shadow-xs shadow-black  relative">
+    <article
+      className="flex  items-center  p-2 h-1/4  gap-5 border-b-2    shadow-xs shadow-black  relative 
+    
+    xxs:flex-col 
+    sm:flex-row 
+    "
+    >
       <img
-        className="bg-[#131E30] h-14 w-14 object-cover rounded-lg"
+        className="bg-[#131E30] h-14 w-14 object-cover rounded-lg *:
+        xxs:h-10 xxs:w-10
+        sm:h-12 sm:w-12
+        "
         src={fireIMG}
         alt={`${prop.projectName}-img`}
       />

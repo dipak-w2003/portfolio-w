@@ -36,7 +36,6 @@ const HomeBlogPag2 = () => {
               <section
                 data-reveal
                 className="my-1 mx-4 h-[150px] bg-white  rounded-md  flex items-center justify-center overflow-hidden   
-                
                 xxs:flex-col sm:flex-row
                 "
               >
